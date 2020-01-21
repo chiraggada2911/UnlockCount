@@ -85,8 +85,8 @@ public class LiveWallpaper extends WallpaperService {
         }
 
         private void draw() {
-            typeface = ResourcesCompat.getFont(context, R.font.goudysto);
-            paint.setTypeface(typeface);
+//            typeface = ResourcesCompat.getFont(context, R.font.goudysto);
+//            paint.setTypeface(typeface);
             Counting = Integer.toString(MainActivity.Count);
 //          Counting = preferences.getString("CountKey", "null");
             SurfaceHolder holder = getSurfaceHolder();

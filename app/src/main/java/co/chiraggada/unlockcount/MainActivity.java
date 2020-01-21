@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     static TextView mText;
-    private static String TAG = "TEST";
+    private static String TAG = "hugo";
 
     public static String CountKey;
     public static int Count;
