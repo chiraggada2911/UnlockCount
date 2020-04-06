@@ -13,8 +13,6 @@ import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
 
-import androidx.core.content.res.ResourcesCompat;
-
 public class LiveWallpaper extends WallpaperService {
 
     static int overlayIndex = 0;
@@ -88,7 +86,8 @@ public class LiveWallpaper extends WallpaperService {
 //            typeface = ResourcesCompat.getFont(context, R.font.goudysto);
 //            paint.setTypeface(typeface);
             Counting = Integer.toString(MainActivity.Count);
-//          Counting = preferences.getString("CountKey", "null");
+            String Message = preferences.getString(Const.Message,"hi");
+          Counting = preferences.getString("CountKey", "null");
             SurfaceHolder holder = getSurfaceHolder();
             Canvas canvas = null;
             int color = Color.parseColor("#000000" );
@@ -103,7 +102,7 @@ public class LiveWallpaper extends WallpaperService {
                     }
                     xPos = (canvas.getWidth() / 2) - (int) (paint.measureText(Counting) / 2);
                     yPos = (int) ((canvas.getHeight() / 2) - ((paint.ascent() + paint.descent()) / 2));
-                    canvas.drawText(Counting, xPos, yPos, paint);
+                    canvas.drawText(Message, xPos, yPos, paint);
 
 
                 }

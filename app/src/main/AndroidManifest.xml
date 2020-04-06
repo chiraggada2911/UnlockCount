@@ -11,38 +11,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
+
         <service
-            android:name="co.chiraggada.unlockcount.PhoneUnlockedReceiver"
-            android:label="@string/app_name"
-            >
+            android:name=".PhoneUnlockedReceiver"
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.service.KeyguardManager.KEYGUARD_SERVICE"/>
+                <action android:name="android.service.KeyguardManager.KEYGUARD_SERVICE" />
             </intent-filter>
         </service>
-
         <service
             android:name=".LiveWallpaper"
             android:enabled="true"
-            android:permission="android.permission.BIND_WALLPAPER" >
-        <intent-filter>
-            <action android:name="android.service.wallpaper.WallpaperService" >
-            </action>
-        </intent-filter>
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"></action>
+            </intent-filter>
 
-        <meta-data
-            android:name="android.service.wallpaper"
-            android:resource="@xml/mywallpaper" >
-        </meta-data>
-         </service>
-
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/mywallpaper"></meta-data>
+        </service>
     </application>
-
 
 </manifest>
